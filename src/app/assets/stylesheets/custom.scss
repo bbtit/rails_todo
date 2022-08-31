@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
 
 /* mixins, variables, etc. */
 
@@ -201,5 +202,61 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* List */
+.listnewPage {
+  .new_list {
+    max-width: 500px;
+    margin: 100px auto 0;
+  }
+}
+
+.topPage {
+  min-height: 93vh;
+  padding-top: 30px;
+  background: #bababa;
+  overflow-x: scroll;
+  .listWrapper {
+    display: flex;
+    height: 100%;
+    align-items: baseline;
+    .list {
+      position: relative;
+      background: #e2e4e6;
+      padding: 10px;
+      margin-left: 20px;
+      min-width: 250px;
+      &:last-child {
+        margin-right: 20px;
+      }
+      &_header {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &_title {
+          font-size: 20px;
+          margin: 0;
+        }
+        &_action {
+          .fa-pen, .fa-trash {
+            font-size: 18px;
+            color: #8c8c8c;
+          }
+          .fa-trash {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.listeditPage {
+  .listForm {
+    max-width: 500px;
+    margin: 100px auto 0;
   }
 }

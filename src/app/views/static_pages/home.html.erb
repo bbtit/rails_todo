@@ -1,3 +1,21 @@
+<% if logged_in? %>
+<div class="topPage">
+  <div class="listWrapper">
+    <% @lists.each do |list| %>
+      <div class="list">
+        <div class="list_header">
+          <h2 class="list_header_title"><%= list.content %></h2>
+          <div class="list_header_action">
+            <%= link_to content_tag(:i, '', class: 'fas fa-trash'), list, method: :delete, data: { confirm: "#{list.content}を削除して大丈夫ですか？" } %>
+            <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_list_path(list)) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% else %>
 <div class="center jumbotron">
   <h1>Welcome to the BB App</h1>
 
@@ -12,3 +30,4 @@
 
 <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200px"),
                       "https://rubyonrails.org/" %>
+<% end %>

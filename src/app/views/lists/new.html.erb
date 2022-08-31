@@ -1,0 +1,15 @@
+<% provide(:title, 'New List') %>
+
+<div class="listnewPage">
+  <div class="container">
+    <%= form_with model: @list, url: { action: :create }, class: "new_list", local: true do |f| %>
+      <% if @list.errors.any? %>
+        <p class="text-danger">タイトルは1～255文字以内で入力してください</p>
+      <% end %>
+
+      <%= f.label :content %>
+      <%= f.text_field :content, autofocus: true, class: "form-control listName", placeholder: "リスト名" %>
+      <div class="text-center"><%= f.submit "作成", class: "btn btn-primary" %></div>
+    <% end %>
+  </div>
+</div>
